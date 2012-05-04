@@ -51,3 +51,7 @@ augroup END
 " super tab completions 
 """""""""""""""
 let g:SuperTabDefaultCompletionType = "context"
+
+
+set wildmode=longest,list,full
+set wildmenu
