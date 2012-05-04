@@ -1,0 +1,22 @@
+[user]
+	name = Anthony Nemitz
+	email = anemitz@gmail.com
+[core]
+	excludesfile = ~/.gitignore
+[branch]
+	autosetuprebase = always
+[branch "master"]
+  remote = origin
+  merge = refs/heads/master
+[color]
+  # turn on color
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  ui = auto
+[alias]
+  lc = log ORIG_HEAD.. --stat --no-merges
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  upsubs = submodule update --init --recursive
+  upall = pull origin master; upsubs
