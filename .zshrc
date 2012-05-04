@@ -66,7 +66,7 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 ##
 # @anthony adding django python path
 ##
-export PYTHONPATH=.:./lib
+#export PYTHONPATH=.
 
 # Setup Amazon EC2 Command-Line Tools
 export EC2_HOME=~/.ec2
@@ -75,3 +75,6 @@ export EC2_PRIVATE_KEY=`ls $EC2_HOME/pk-*.pem`
 export EC2_CERT=`ls $EC2_HOME/cert-*.pem`
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home/
 export EC2_URL=https://ec2.us-west-1.amazonaws.com
+
+
+source $HOME/virtualenvwrapper.sh
