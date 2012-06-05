@@ -1,0 +1,9 @@
+[submodule ".vim/pathogen"]
+	path = .vim/pathogen
+	url = https://github.com/tpope/vim-pathogen.git
+[submodule ".vim/bundle/vim-supertab"]
+	path = .vim/bundle/vim-supertab
+	url = https://github.com/tsaleh/vim-supertab.git
+[submodule ".vim/bundle/vim-less"]
+	path = .vim/bundle/vim-less
+	url = https://github.com/groenewege/vim-less.git

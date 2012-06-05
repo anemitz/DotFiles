@@ -54,19 +54,10 @@ PS1="${green_color}%* ${darkblue_color}%n${lightblue_color}@\
 ${darkblue_color}%m${lightred_color}%(?.. %?) \
 ${yellow_color}%c${blue_color} %# ${reset_color}"
 
-# dump cores
-ulimit -c unlimited
-
-##
-
 # MacPorts Installer addition on 2010-10-19_at_14:03:17: adding an appropriate PATH variable for use with MacPorts.
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export PATH=/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
-
-##
-# @anthony adding django python path
-##
-#export PYTHONPATH=.
 
 # Setup Amazon EC2 Command-Line Tools
 export EC2_HOME=~/.ec2

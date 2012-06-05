@@ -1,3 +1,9 @@
+"""""""""""""
+" Pathogen
+"""""""""""""
+call pathogen#infect()
+call pathogen#helptags()
+
 set nocompatible
 syntax enable
 set encoding=utf-8
@@ -31,7 +37,7 @@ set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
 
 augroup cprog
-autocmd BufRead,BufNewFile *.hs,*.sql,*.rc,*.pc,*.py,*.css,*.js,*.html,*.php set tabstop=4 shiftwidth=4 expandtab
+autocmd BufRead,BufNewFile *.hs,*.sql,*.rc,*.pc,*.py,*.css,*.less,*.js,*.html,*.php set tabstop=4 shiftwidth=4 expandtab
 autocmd BufRead,BufNewFile *.jomp,*.java,*.c,*.cc,*.cpp,*.hh,*.h,*.m,*.mm set cindent tabstop=4 shiftwidth=4 expandtab
 autocmd BufRead,BufNewFile *.jomp set syntax=java
 augroup END
@@ -51,7 +57,6 @@ augroup END
 " super tab completions 
 """""""""""""""
 let g:SuperTabDefaultCompletionType = "context"
-
-
 set wildmode=longest,list,full
 set wildmenu
+

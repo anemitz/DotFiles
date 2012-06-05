@@ -17,3 +17,7 @@ build/
 
 # Backup files
 *~.nib
+
+# vim backup and temporary files
+.vim/backup/*
+.vim/tmp/*
