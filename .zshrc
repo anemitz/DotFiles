@@ -67,5 +67,6 @@ export EC2_CERT=`ls $EC2_HOME/cert-*.pem`
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home/
 export EC2_URL=https://ec2.us-west-1.amazonaws.com
 
+export CFLAGS="-I/opt/local/include -L/opt/local/lib"
 
 source $HOME/virtualenvwrapper.sh
