@@ -21,3 +21,6 @@ build/
 # vim backup and temporary files
 .vim/backup/*
 .vim/tmp/*
+
+# virtual env
+venv
