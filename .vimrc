@@ -23,7 +23,7 @@ set smartcase                   " ... unless they contain at least one capital l
 
 set background=dark
 set mouse=a
-set ttymouse=xterm
+set ttymouse=urxvt
 set nocindent noautoindent
 
 set guifont=Monospace\ 8
@@ -59,4 +59,5 @@ augroup END
 let g:SuperTabDefaultCompletionType = "context"
 set wildmode=longest,list,full
 set wildmenu
+
 
