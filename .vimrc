@@ -32,6 +32,7 @@ set laststatus=2
 set autoread
 set suffixes=.bak,~,.swp,.o
 
+set noswapfile
 set backup
 set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
