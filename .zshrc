@@ -61,4 +61,16 @@ export PATH=/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin:$PAT
 
 export CFLAGS="-I/opt/local/include -L/opt/local/lib"
 
-export PYTHONPATH=.:./lib:$PYTHONPATH
+export PYTHONPATH=.:./lib
+
+
+has_virtualenv() {
+    if [ -e venv ]; then
+        deactivate >/dev/null 2>&1
+        source venv/bin/activate
+    fi
+}
+venv_cd () {
+    cd "$@" && has_virtualenv
+}
+alias cd="venv_cd"
