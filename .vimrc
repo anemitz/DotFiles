@@ -23,7 +23,7 @@ set smartcase                   " ... unless they contain at least one capital l
 
 set background=dark
 set mouse=a
-set ttymouse=urxvt
+set ttymouse=xterm2
 set nocindent noautoindent
 
 set guifont=Monospace\ 8
