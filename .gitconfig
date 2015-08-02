@@ -3,8 +3,6 @@
 	email = anemitz@gmail.com
 [core]
 	excludesfile = ~/.gitignore
-[branch]
-	autosetuprebase = always
 [branch "master"]
   remote = origin
   merge = refs/heads/master
@@ -20,5 +18,27 @@
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   upsubs = submodule update --init --recursive
   upall = pull origin master
+  st = status
+  ci = commit
+  ic = commit
+  cia = commit -a
+  cp = cherry-pick
+  a = add
+  d = diff
+  dc = diff --cached
+  rb = rebase
+  br = branch
+  #co = checkout
+  co = "!f(){ git checkout \"$@\" && git submodule update --init --recursive --quiet; }; f"
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  unstage = reset HEAD
+  subdate = submodule update --init --recursive --quiet
+  sub = submodule update --init --recursive --quiet
+  ca = commit --amend
+  fix = commit -a --amend -C HEAD
+  up = !sh -c 'git pull --rebase --prune && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
+  mt = mergetool
+  m = merge --no-ff
+  pu = pull
 [credential]
 	helper = osxkeychain
