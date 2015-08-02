@@ -1,9 +1,3 @@
-"""""""""""""
-" Pathogen
-"""""""""""""
-call pathogen#infect()
-call pathogen#helptags()
-
 set nocompatible
 syntax enable
 set encoding=utf-8
@@ -21,7 +15,7 @@ set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
-set background=dark
+set background=light
 set mouse=a
 set ttymouse=xterm2
 set nocindent noautoindent
