@@ -1,76 +1,62 @@
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.history
-HISTSIZE=1000
-SAVEHIST=10000
-bindkey -v
-bindkey '^A' beginning-of-line
-bindkey '^E' end-of-line
-bindkey "^R" history-incremental-search-backward
-bindkey '^U' kill-whole-line
-bindkey '^D' delete-char-or-list
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/Users/anemitz/.zshrc'
+# Path to your oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh
 
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="sunrise"
 
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Set to this to use case-sensitive completion
+# CASE_SENSITIVE="true"
+
+# Comment this out to disable bi-weekly auto-update checks
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment to change how many often would you like to wait before auto-updates occur? (in days)
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment following line if you want to disable colors in ls
+# DISABLE_LS_COLORS="true"
+
+# Uncomment following line if you want to disable autosetting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+# COMPLETION_WAITING_DOTS="true"
+
+#PATH=~/.pyenv/shims:/Applications/Postgres.app/Contents/Versions/9.3/bin:/usr/local/opt/openssl/bin:/usr/local/opt/curl/bin:/usr/local/opt/ccache/libexec:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:~/bin
+PATH=/Applications/Postgres.app/Contents/Versions/9.3/bin:/usr/local/opt/openssl/bin:/usr/local/opt/curl/bin:/usr/local/opt/ccache/libexec:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:~/bin
+
+#export PYENV_ROOT=/usr/local/opt/pyenv
+#if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+#export VIRTUALENVWRAPPER_PYTHON="$(pyenv which python 2>/dev/null || true)"; 
+#export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+#source /usr/local/bin/virtualenvwrapper.sh
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(git git-extras osx autoenv)
+
+source $ZSH/oh-my-zsh.sh
+
+# Customize to your needs...
+#WORKON_HOME=$HOME/.virtualenvs
 export EDITOR=vim
+export GEM_HOME=$(brew --prefix)
+export PYTHONPATH=$PYTHONPATH:./lib
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
-alias d='dirs -v'
-export LSCOLORS=ExFxCxDxBxegedabagacad
-alias ls='ls -G'
-alias l='ls -G'
-alias mv='mv -i'
-alias load='while :; do echo > /dev/null; done'
-autoload -U promptinit
-promptinit
-setopt autocd autopushd pushdignoredups hist_verify correct
+alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
 
-# completion
-zstyle ':completion' completer _complete _match _approximate
-zstyle ':completion:*:match' original only
-zstyle ':completion:*:approximate' max-errors 1 numeric
-
-zstyle ':completion:*:*:kill' menu yes select
-zstyle ':completion:*:kill' force-list always
-
-zstyle ':completion:*:cd' ignore-parents parent pwd
-
-#possible fix for slowness on git add
-#__git_files(){ _wanted files expl 'local files' _files }
-
-# colors
-blue_color=$'%{\e[01;34m%}'
-green_color=$'%{\e[01;32m%}'
-lightblue_color=$'%{\e[01;36m%}'
-darkblue_color=$'%{\e[00;36m%}'
-yellow_color=$'%{\e[01;33m%}'
-lightred_color=$'%{\e[01;31m%}'
-darkred_color=$'%{\e[00;31m%}'
-reset_color=$'%{\e[0m%}'
-PS1="${green_color}%* ${darkblue_color}%n${lightblue_color}@\
-${darkblue_color}%m${lightred_color}%(?.. %?) \
-${yellow_color}%c${blue_color} %# ${reset_color}"
-
-# MacPorts Installer addition on 2010-10-19_at_14:03:17: adding an appropriate PATH variable for use with MacPorts.
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-export PATH=/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH
-# Finished adapting your PATH environment variable for use with MacPorts.
-
-export CFLAGS="-I/opt/local/include -L/opt/local/lib"
-
-export PYTHONPATH=.:./lib
-
-
-has_virtualenv() {
-    if [ -e venv ]; then
-        deactivate >/dev/null 2>&1
-        source venv/bin/activate
-    fi
+# fuck the fancy shit, i just want a fast prompt
+function custom_git_prompt() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+  echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}"
 }
-venv_cd () {
-    cd "$@" && has_virtualenv
-}
-alias cd="venv_cd"
