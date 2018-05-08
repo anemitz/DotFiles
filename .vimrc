@@ -46,13 +46,3 @@ au!
 au! BufRead,BufNewFile *.vala set filetype=vala cindent tabstop=4 shiftwidth=4 expandtab
 au! Syntax vala source /usr/share/vim/vim70/syntax/cs.vim
 augroup END
-
-
-"""""""""""""""
-" super tab completions 
-"""""""""""""""
-let g:SuperTabDefaultCompletionType = "context"
-set wildmode=longest,list,full
-set wildmenu
-
-
