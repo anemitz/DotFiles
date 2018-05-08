@@ -19,3 +19,6 @@
 [submodule ".vim/bundle/vim-jquery"]
 	path = .vim/bundle/vim-jquery
 	url = https://github.com/itspriddle/vim-jquery
+[submodule "supertab"]
+	path = .vim/bundle/supertab
+	url = https://github.com/ervandew/supertab.git
