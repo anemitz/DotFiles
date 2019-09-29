@@ -28,8 +28,8 @@ set suffixes=.bak,~,.swp,.o
 
 set noswapfile
 set backup
-set backupdir=~/.vim/backup
-set directory=~/.vim/tmp
+set backupdir=./.backup,.,/tmp
+set directory=.,./.backup,/tmp
 
 augroup cprog
 autocmd BufRead,BufNewFile *.hs,*.sql,*.rc,*.pc,*.py,*.css,*.less,*.js,*.html,*.php set tabstop=4 shiftwidth=4 expandtab
